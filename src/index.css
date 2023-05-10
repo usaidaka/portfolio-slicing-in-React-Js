@@ -1,0 +1,349 @@
+/* SETTING LAYOUTING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Righteous", cursive;
+  /* font-family: "Roboto", sans-serif; */
+}
+
+body {
+  height: 100vh;
+  width: 98.5vw;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(223, 223, 223) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 90%;
+  height: 90%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 1fr 1fr;
+  /* border: 1px solid black; */
+  grid-template-areas:
+    "head head head head"
+    "asideL nav nav nav"
+    "asideL main main asideR"
+    "asideL main main asideR";
+  gap: 20px;
+}
+
+header {
+  grid-area: head;
+  /* border: 1px solid black; */
+}
+
+nav {
+  grid-area: nav;
+  /* border: 1px solid yellow; */
+}
+
+aside.left {
+  grid-area: asideL;
+  /* border: 1px solid blue; */
+}
+
+main {
+  grid-area: main;
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-areas:
+    "top"
+    "bottom";
+  gap: 20px;
+  grid-template-rows: 1fr 1fr;
+}
+
+aside.right {
+  grid-area: asideR;
+  /* border: 1px solid red; */
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header img {
+  width: 50px;
+}
+
+aside.left {
+  display: flex;
+  flex-direction: column;
+}
+
+header h4 {
+  font-size: 12px;
+}
+
+/* NAV */
+
+nav div.nav-image {
+  background-image: url("./asset/citysunset.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  background-position-y: -300px;
+  border-radius: 30px;
+}
+
+nav div.nav-image h1 {
+  font-size: 50px;
+  color: white;
+  text-shadow: 3px 3px 4px black;
+}
+
+nav div.nav-image button {
+  background-color: #007ff8;
+  border-radius: 20px;
+  font-size: inherit;
+  height: 40px;
+  width: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+nav div.nav-image button:hover {
+  background-color: #0068ca;
+}
+nav div.nav-image button:active {
+  transform: scale(0.9);
+}
+
+/* ASIDE LEFT */
+
+aside.left img {
+  width: 60%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+aside.left .tag-name {
+  margin-top: 10px;
+}
+
+aside.left .tag-name button {
+  border: 1px solid white;
+  background-color: #007ff8;
+  border-radius: 20px;
+  font-size: inherit;
+  height: 40px;
+  width: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+aside.left .tag-name button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+aside.left .tag-name button:hover {
+  background-color: #015baf;
+}
+
+aside.left .tag-name button:active {
+  transform: scale(0.9);
+}
+
+aside.left .followers {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "followers-left followers-middle followers-right";
+  margin-bottom: 10px;
+  margin: 10px;
+}
+
+aside.left .followers .followers-left {
+  grid-area: followers-left;
+  text-align: center;
+}
+aside.left .followers .followers-middle {
+  grid-area: followers-middle;
+  text-align: center;
+}
+aside.left .followers .followers-right {
+  grid-area: followers-right;
+  text-align: center;
+}
+
+aside.left .footer {
+  border-top: 2px double black;
+  border-bottom: 2px double black;
+  margin: 0;
+}
+
+aside.left p.footer-word {
+  font-size: 10px;
+  margin-top: 10px;
+  color: rgb(99, 99, 99);
+}
+
+/* MAIN */
+
+/* MAIN TOP */
+main .top p.popular {
+  margin: 10px 20px;
+}
+
+main .top {
+  background-color: white;
+  border-radius: 30px;
+}
+
+main .top .collection img {
+  width: 96px;
+  border-radius: 50%;
+  margin: 10px 4px;
+}
+
+/* MAIN BOTTOM */
+
+main .bottom {
+  background-color: white;
+  border-radius: 30px;
+}
+
+main .bottom img {
+  width: 160px;
+  border-radius: 50%;
+  margin: 0 30px;
+  margin: 20px;
+}
+
+main .bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+main .bottom .main-bottom-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main .bottom .main-bottom-text .up-word {
+  margin-bottom: 10px;
+}
+
+main .bottom .main-bottom-text button {
+  background-color: #007ff8;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+main .bottom .main-bottom-text button:hover {
+  background-color: #016dd3;
+}
+
+main .bottom .main-bottom-text button:active {
+  transform: scale(0.9);
+}
+
+main .bottom .main-bottom-text h6 {
+  color: rgb(144, 144, 144);
+}
+
+/* ASIDE right */
+aside.right .biography {
+  margin-bottom: 20px;
+}
+aside.right .biography p {
+  text-align: justify;
+}
+aside.right .website {
+  margin-bottom: 30px;
+}
+aside.right .skill {
+  margin-bottom: 10px;
+}
+
+aside.right .skill button.ps {
+  background-color: yellowgreen;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+aside.right .skill button.ps:hover {
+  background-color: rgb(129, 172, 42);
+}
+
+aside.right .skill button.ps:active {
+  transform: scale(0.9);
+}
+
+aside.right .skill button.react {
+  background-color: #007ff8;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+aside.right .skill button.react:hover {
+  background-color: #0068c9;
+}
+
+aside.right .skill button.react:active {
+  transform: scale(0.9);
+}
+
+aside.right .skill button.node {
+  background-color: tomato;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+aside.right .skill button.node:hover {
+  background-color: rgb(208, 76, 53);
+}
+aside.right .skill button.node:active {
+  transform: scale(0.9);
+}
